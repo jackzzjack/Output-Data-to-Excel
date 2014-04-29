@@ -45,9 +45,14 @@ public class OutputToExcel {
 			// File is exist.
 			// append the excel file.
 			doc1.setWorkbookCursor();
-			doc1.setSheetCursor(sheet_name);
-			int index = doc1.getExistsIndex();
-			doc1.writeGroup(input.getGroups(), index, Integer.valueOf(args[2]));
+			if (doc1.setSheetCursor(sheet_name) == true) {
+				// New Sheet.
+				doc1.writeGroup(input.getGroups(), 0, 0);
+			} else {
+				// Exist Sheet.
+				int index = doc1.getExistsIndex();
+				doc1.writeGroup(input.getGroups(), index, Integer.valueOf(args[2]));
+			}
 			output_msg = "Append the excel file successful.";
 		}
 		

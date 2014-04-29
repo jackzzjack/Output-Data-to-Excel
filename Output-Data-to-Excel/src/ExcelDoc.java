@@ -107,11 +107,19 @@ public class ExcelDoc {
 		return index;
 	}
 
-	public void setSheetCursor(String name) {
+	/*
+	 * new sheet returns true.
+	 * exist sheet returns false.
+	 */
+	public boolean setSheetCursor(String name) {
 		_sheet1 = _workbook.getSheet(name);
 		
-		if (_sheet1 == null)
+		if (_sheet1 == null) {
 			_sheet1 = _workbook.createSheet(name);
+			return true;
+		}
+		
+		return false;
 	}
 
 	public void setWorkbookCursor() {
