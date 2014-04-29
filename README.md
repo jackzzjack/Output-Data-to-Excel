@@ -14,7 +14,12 @@ Date: 2014/04/25</pre>
 <pre>Support 'double type' only right now.
 The 'string type' will be supported in the future.</pre>
 
-<h2>Usage:</h2>
+<h2>Usage</h2>
 
 javac OutputToExcel.java<br />
 <b>java OutputToExcel [text file] [excel file name]</b>
+
+<h2>Features</h2>
+* Append mode and write mode.
+
+<h2>Known Issues</h2>
